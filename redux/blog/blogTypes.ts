@@ -25,6 +25,13 @@ export interface PostType {
     comments?: CommentType[] | [];
 }
 
+export interface StoreType {
+    posts: PostType[] | [];
+    post: PostType | null;
+    isError: Record<string, unknown> | null;
+    isLoading: boolean;
+}
+
 // actions interfaces
 export interface GetPostsStartType {
     type: typeof GET_POSTS_START;
