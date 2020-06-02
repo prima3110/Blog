@@ -44,7 +44,7 @@ const mapStateToProps = (store: types.StoreType): MSTP => ({
 });
 
 const mapDispatchToProps = (dispatch: (any) => void): MDTP => ({
-    getPost: (id: number): void => dispatch(blogOperations.getPost(id)),
+    getPost: (id: number): void => dispatch(blogOperations.getPost(+id)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(PostPage);
