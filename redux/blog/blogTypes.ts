@@ -26,10 +26,12 @@ export interface PostType {
 }
 
 export interface StoreType {
-    posts: PostType[] | [];
-    post: PostType | null;
-    isError: Record<string, unknown> | null;
-    isLoading: boolean;
+    blog: {
+        posts: PostType[] | [];
+        post: PostType | null;
+        isError: {} | null;
+        isLoading: boolean;
+    };
 }
 
 // actions interfaces
@@ -47,7 +49,7 @@ export interface GetPostsSuccessType {
 export interface GetPostsErrorType {
     type: typeof GET_POSTS_ERROR;
     payload: {
-        error: Record<string, unknown>;
+        error: {};
     };
 }
 
@@ -65,7 +67,7 @@ export interface GetPostSuccessType {
 export interface GetPostErrorType {
     type: typeof GET_POST_ERROR;
     payload: {
-        error: Record<string, unknown>;
+        error: {};
     };
 }
 
@@ -83,7 +85,7 @@ export interface CreatePostSuccessType {
 export interface CreatePostErrorType {
     type: typeof CREATE_POST_ERROR;
     payload: {
-        error: Record<string, unknown>;
+        error: {};
     };
 }
 

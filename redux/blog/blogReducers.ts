@@ -24,7 +24,7 @@ const post = (state = null, action: types.actionsTypes): types.PostType => {
     }
 };
 
-const isError = (state = null, action: types.actionsTypes): Record<string, unknown> | null => {
+const isError = (state = null, action: types.actionsTypes): {} | null => {
     switch (action.type) {
         case types.GET_POSTS_ERROR:
         case types.GET_POST_ERROR:

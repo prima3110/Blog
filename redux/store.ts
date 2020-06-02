@@ -5,11 +5,10 @@ import rootReducer from './rootReducer';
 
 const middleware = [ReduxThunk];
 
-const composeEnhancers =
+const enhancer =
     process.env.NODE_ENV === 'development'
         ? composeWithDevTools(applyMiddleware(...middleware))
         : applyMiddleware(...middleware);
 
-const store = createStore(rootReducer, composeEnhancers);
-
+const store = createStore(rootReducer, enhancer);
 export default store;

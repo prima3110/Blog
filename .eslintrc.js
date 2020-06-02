@@ -12,5 +12,7 @@ module.exports = {
         sourceType: 'module', // Allows for the use of imports
     },
     plugins: ['@typescript-eslint', 'jsx-a11y'],
-    rules: {},
+    rules: {
+        '@typescript-eslint/ban-types': [0],
+    },
 };
