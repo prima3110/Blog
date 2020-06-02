@@ -8,7 +8,7 @@ import * as types from '../../redux/blog/blogTypes';
 import Loader from '../..//components/Loader/Loader';
 
 interface MDTP {
-    getPost: (id: string) => void;
+    getPost: (id: number) => void;
 }
 
 interface MSTP {
@@ -18,7 +18,7 @@ interface MSTP {
 
 interface PostPageProps {
     postById: types.PostType;
-    getPost: (id: string | string[]) => void;
+    getPost: (id: number) => void;
     isLoading: boolean;
 }
 
@@ -27,7 +27,7 @@ const PostPage = ({ postById, getPost, isLoading }: PostPageProps): JSX.Element 
     const { id } = router.query;
 
     useEffect(() => {
-        getPost(id);
+        getPost(+id);
     }, [getPost, id]);
 
     return (
@@ -44,7 +44,7 @@ const mapStateToProps = (store: types.StoreType): MSTP => ({
 });
 
 const mapDispatchToProps = (dispatch: (any) => void): MDTP => ({
-    getPost: (id: string): void => dispatch(blogOperations.getPost(id)),
+    getPost: (id: number): void => dispatch(blogOperations.getPost(id)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(PostPage);
