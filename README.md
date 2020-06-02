@@ -8,3 +8,5 @@ Steps to run:
 2. Install dependencies: npm install
 3. Start the application: npm run dev
 4. Open it on http://localhost:3000
+
+Or deploy link: https://blog-ljeb3nhl0.now.sh/
