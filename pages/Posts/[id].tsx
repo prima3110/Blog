@@ -5,6 +5,7 @@ import Post from '../../components/Post/Post';
 import * as blogSelectors from '../../redux/blog/blogSelectors';
 import * as blogOperations from '../../redux/blog/blogOperations';
 import * as types from '../../redux/blog/blogTypes';
+import Loader from '../..//components/Loader/Loader';
 
 interface MDTP {
     getPost: (id: string) => void;
@@ -12,14 +13,16 @@ interface MDTP {
 
 interface MSTP {
     postById: types.PostType;
+    isLoading: boolean;
 }
 
 interface PostPageProps {
     postById: types.PostType;
     getPost: (id: string | string[]) => void;
+    isLoading: boolean;
 }
 
-const PostPage = ({ postById, getPost }: PostPageProps): JSX.Element => {
+const PostPage = ({ postById, getPost, isLoading }: PostPageProps): JSX.Element => {
     const router = useRouter();
     const { id } = router.query;
 
@@ -27,11 +30,17 @@ const PostPage = ({ postById, getPost }: PostPageProps): JSX.Element => {
         getPost(id);
     }, [getPost, id]);
 
-    return <>{postById && <Post post={postById} />}</>;
+    return (
+        <>
+            {isLoading && <Loader />}
+            {postById && <Post post={postById} />}
+        </>
+    );
 };
 
 const mapStateToProps = (store: types.StoreType): MSTP => ({
     postById: blogSelectors.getPost(store),
+    isLoading: blogSelectors.getLoader(store),
 });
 
 const mapDispatchToProps = (dispatch: (any) => void): MDTP => ({
