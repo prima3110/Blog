@@ -13,7 +13,7 @@
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ],
-    "/Posts/[id]": [
+    "/Posts/new": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ],

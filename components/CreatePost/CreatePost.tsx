@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import * as blogOperations from '../../redux/blog/blogOperations';
-import { Wrapper, Form, Textarea, Input, Btn } from './CreatePost.styled';
+import { Form, Textarea, Input, Button } from './CreatePost.styled';
 
 interface MSTP {
     addPost: (post) => void;
@@ -33,21 +33,23 @@ const CreatePost = ({ addPost }: MSTP): JSX.Element => {
             };
             addPost(newPost);
             reset();
+            alert('Your post successfully added!');
         }
     };
 
     return (
         <Form onSubmit={onSubmitForm}>
-            <Input placeholder="Enter your title here" value={input} onChange={onChangeInput} />
+            <Input placeholder="Enter your title here" value={input} onChange={onChangeInput} required />
             <Textarea
-                rows="10"
-                cols="45"
+                rows="20"
+                cols="20"
                 name="text"
                 placeholder="Enter your body here"
                 value={textarea}
                 onChange={onChangeTextarea}
+                required
             ></Textarea>
-            <Btn type="submit">Add New Post</Btn>
+            <Button type="submit">Add New Post</Button>
         </Form>
     );
 };

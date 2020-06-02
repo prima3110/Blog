@@ -6,6 +6,7 @@ export const Logo = styled.h1`
     padding-top: 20px;
     margin-bottom: 0;
 `;
+
 export const Wrapper = styled.header`
     background: lightgrey;
 `;

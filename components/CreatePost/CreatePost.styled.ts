@@ -1,38 +1,40 @@
 import styled from 'styled-components';
 
-export const Wrapper = styled.div`
-    background: rgba(123, 154, 61, 0.7);
-    height: 100vh;
-`;
-
 export const Form = styled.form`
-    width: 70%;
+    width: 50%;
     display: flex;
     flex-direction: column;
-    margin: auto;
+    margin: 0 auto;
 `;
 
 export const Input = styled.input`
-    background: rgba(223, 232, 227, 0.8);
+    cursor: pointer;
+    font-weight: bold;
+    border: 2px solid black;
+    background: mintcream;
     padding: 10px;
     margin: 20px 0;
-    border-radius: 3px;
-    box-shadow: 9px 10px 5px 0px rgba(57, 82, 63, 0.8);
+    box-shadow: 10px 10px 10px 0px black;
 `;
 
 export const Textarea = styled.textarea`
-    background: rgba(223, 232, 227, 0.8);
+    cursor: pointer;
+    font-weight: bold;
+    border: 2px solid black;
+    background: lightgoldenrodyellow;
     padding: 10px;
     margin-bottom: 20px;
-    border-radius: 3px;
-    box-shadow: 9px 10px 5px 0px rgba(57, 82, 63, 0.8);
+    box-shadow: 10px 10px 10px 0px black;
 `;
 
-export const Btn = styled.button`
-    margin: auto;
-    width: 235px;
-    height: 30px;
-    border-radius: 3px;
-    color: rgb(54, 59, 56);
-    box-shadow: 9px 10px 5px 0px rgba(57, 82, 63, 0.8);
+export const Button = styled.button`
+    cursor: pointer;
+    border: 1px solid black;
+    font-weight: bold;
+    font-size: 20px;
+    margin: 0 auto;
+    width: 200px;
+    height: 40px;
+    color: green;
+    box-shadow: 10px 10px 10px 0px gray;
 `;

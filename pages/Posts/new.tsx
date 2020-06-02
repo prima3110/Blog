@@ -1,8 +1,8 @@
 import React from 'react';
-import AddPost from '../../components/CreatePost/CreatePost';
+import CreatePost from '../../components/CreatePost/CreatePost';
 
-const CreatePost = (): JSX.Element => {
-    return <AddPost />;
+const AddPost = (): JSX.Element => {
+    return <CreatePost />;
 };
 
-export default CreatePost;
+export default AddPost;

@@ -1,24 +1,28 @@
 import React from 'react';
-import Link from 'next/link';
 import { PostBlock, Title, Body } from './Post.styled';
+import * as types from '../../redux/blog/blogTypes';
 
 interface PropsPost {
-    post: {
-        id: number;
-        title: string;
-        body: string;
-    };
+    post: types.PostType;
 }
 
 const Post = ({ post }: PropsPost): JSX.Element => {
     return (
         <>
-            <Link href="/posts/[id]" as={`/posts/${post.id}`}>
-                <PostBlock>
-                    <Title>{post.title}</Title>
-                    <Body>{post.body}</Body>
-                </PostBlock>
-            </Link>
+            <PostBlock>
+                <Title>{post.title}</Title>
+                <Body>{post.body}</Body>
+                {post.comments && post.comments.length > 0 && <h3>Comments: </h3>}
+                {post.comments && post.comments.length > 0 ? (
+                    (post.comments as Array<types.CommentType>).map((el) => (
+                        <p key={el.id}>
+                            <span>{el.id}: </span> {el.body}
+                        </p>
+                    ))
+                ) : (
+                    <h3>No comments for this post</h3>
+                )}
+            </PostBlock>
         </>
     );
 };

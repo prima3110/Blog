@@ -10,7 +10,7 @@ const Navigation = (): JSX.Element => {
                 <Link href="/">
                     <NavListItem>Latest Posts</NavListItem>
                 </Link>
-                <Link href="/posts/new">
+                <Link href="/Posts/new">
                     <NavListItem>Create post</NavListItem>
                 </Link>
             </NavList>

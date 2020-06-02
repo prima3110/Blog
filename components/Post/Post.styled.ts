@@ -1,23 +1,14 @@
 import styled from 'styled-components';
 
 export const PostBlock = styled.li`
-    cursor: pointer;
     list-style: none;
-    background: #ddd;
+    background-color: #3e8e41;
     margin: 30px auto;
     padding: 35px 25px;
-    width: 25%;
-    height: 200px;
+    width: 50%;
+    height: 400px;
     overflow-y: scroll;
     box-shadow: 10px 10px 10px 0px black;
-    opacity: 0.7;
-    transition: 0.4s;
-    :hover {
-        transform: scale(1.2);
-        transition: 0.4s;
-        opacity: 1;
-        background-color: #3e8e41;
-    }
 `;
 
 export const Title = styled.p`
